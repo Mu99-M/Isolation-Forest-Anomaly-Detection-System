@@ -66,10 +66,6 @@ In the context of the payment dataset, Isolation Forest has proven effective in 
 3. **Visualization**:  
    The real-time data and detected anomalies are plotted using Matplotlib, allowing users to see anomalies as they appear.
 
-## Algorithm Explanation
-- **Isolation Forest**: This algorithm isolates observations by randomly selecting a feature and a split value. Outliers are expected to be isolated quickly, making this an effective method for detecting anomalies.
-- **Seasonal Adjustment**: Seasonal decomposition helps to remove predictable seasonal patterns, ensuring that only true anomalies are flagged.
-
 ## Results
 The final output is a plot of the data stream with anomalies marked. This can be used to evaluate the system's effectiveness in detecting outliers.
 
