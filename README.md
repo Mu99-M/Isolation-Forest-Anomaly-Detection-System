@@ -1,6 +1,16 @@
 # Isolation Forest Anomaly Detection System
 
-## Algorithm Explanation and Effectiveness
+**Table of Contents**
+- [Isolation Forest Anomaly Detection System](#isolation-forest-anomaly-detection-system)
+  - [1. Algorithm Explanation and Effectiveness](#1-algorithm-explanation-and-effectiveness)
+  - [2. Setup and Installation](#2-setup-and-installation)
+  - [3. How to Use](#3-how-to-use)
+  - [4. Results and Discussion](#4-results-and-discussion)
+  - [5. References](#5-references)
+
+
+
+## 1. Algorithm Explanation and Effectiveness
 
 **Algorithm Overview:**
 
@@ -44,7 +54,7 @@ While this intuition provides a general understanding, the actual Isolation Fore
 
 In the context of the payment dataset, Isolation Forest has proven effective in detecting unusual transaction patterns and identifying outliers in real-time data. The algorithm's ability to isolate anomalies quickly and accurately makes it a valuable tool for fraud detection and other applications requiring robust anomaly detection.
 
-## Setup and Installation
+## 2. Setup and Installation
 1. Clone the repository:  
    ```bash
    git clone https://github.com/Mu99-M/Isolation-Forest-Anomaly-Detection-System.git
@@ -58,7 +68,7 @@ In the context of the payment dataset, Isolation Forest has proven effective in 
    pip install -r requirements.txt
    ```
 
-## How to Use
+## 3. How to Use
 1. **Run the Data Stream Simulation**:  
    The script simulates a continuous flow of data with embedded seasonal patterns. Users can configure parameters to customize the seasonality and randomness of the stream.
 2. **Anomaly Detection**:  
@@ -66,10 +76,42 @@ In the context of the payment dataset, Isolation Forest has proven effective in 
 3. **Visualization**:  
    The real-time data and detected anomalies are plotted using Matplotlib, allowing users to see anomalies as they appear.
 
-## Results
-The final output is a plot of the data stream with anomalies marked. This can be used to evaluate the system's effectiveness in detecting outliers.
+## 4. Results and Discussion
 
-## References
+**Pre-Detection Plot:**
+
+Before Anomaly Detection, the following plot would likely show a more homogeneous distribution in relationship between the `Receiver Balance Before` and `Transaction Amount`, without a clear separation between normal and anomalous transactions. 
+
+<p align="center">
+    <img src="./figures/data_insight.png" width=70%>
+</p>
+
+**Post-Detection Plot:**
+
+The following scatter plot visually represents the relationship between the `Receiver Balance Before` and `Transaction Amount` for both normal and anomalous transactions. This would indicate that the anomaly detection algorithm has successfully identified and isolated the outliers.
+
+- **Green Dots:** Represent normal transactions.
+- **Red Dots:** Represent anomalous transactions.
+
+<p align="center">
+    <img src="./figures/my_result.png" width=70%>
+</p>
+
+**Key Observations:**
+
+  - **Clustering:** The normal transactions appear to cluster in a specific region of the plot, suggesting a pattern or relationship between the two variables.
+  
+  - **Outliers:** The anomalous transactions are scattered more widely, indicating their deviation from the normal pattern.
+
+  - **Correlation:** There seems to be a positive correlation between the `receiver balance before` and `transaction amount` for normal transactions. This suggests that larger balances are associated with larger transactions.
+  
+  - **Anomaly Detection:** The plot visually confirms the effectiveness of the anomaly detection algorithm. The clear separation between normal and anomalous transactions indicates that the algorithm is able to identify outliers that deviate significantly from the expected pattern.
+
+  - **Fraud Detection:** In the context of financial transactions, this plot could be used to identify potential fraudulent activities. Outliers might represent unusual transactions that warrant further investigation.
+
+> For a more in-depth analysis and code exploration, please refer to the [source code](./src/isolation_forest_anomaly_detection_system.ipynb).
+
+## 5. References
 - [An Anomaly Detection Approach Based on Isolation Forest Algorithm for Streaming Data using Sliding Window](https://www.sciencedirect.com/science/article/pii/S1474667016314999)
 - [Anomaly Detection Using Isolation Forest in Python](https://www.digitalocean.com/community/tutorials/anomaly-detection-isolation-forest)
 - [Unit8 Financial Transaction Anomaly Detector Guide](https://unit8.com/resources/a-guide-to-building-a-financial-transaction-anomaly-detector/)
